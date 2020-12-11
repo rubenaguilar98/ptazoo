@@ -23,7 +23,6 @@
                 @foreach($productos as $producto)
 
                     <div class="card" style="width: 20rem; margin : 2vh;">
-                        <img class="card-img-top" src="{{ $producto->foto }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $producto->nombre }}</h5>
                             <p><strong>{{ $producto->precio }}</strong></p>                        
