@@ -1,6 +1,6 @@
 ## About Laravel
 
-https://rubenaguilar98.githubusercontent.com/ptazoo/bdd.png
+https://rubenaguilar98/ptazoo/bdd.png
 
 
 
