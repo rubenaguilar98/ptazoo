@@ -126,16 +126,6 @@
                         <textarea class="form-control" id="descripcion" rows="3" name="descripcion"required>{{ $recintos->descripcion}}</textarea>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-
-                    <label for="img">Imagen</label>
-                        <input type="file" accept=".jpg,.png" id="img" name="img">
-                        <label style="font-weight : bold; margin-right : 1vh;">Archivo actual : </label><input type="text" value="{{ $recintos->img }}" name="imagenAnterior" readonly>
-                        <label style="font-weight : bold; margin-right : 1vh;">Archivo actual : </label><input type="file" name="imagenAnterior2">
-
-                    </div>
-                 </div>
 
                 <div class="row" style="margin-bottom : 2vh;">
                     <div class="col-md-3">

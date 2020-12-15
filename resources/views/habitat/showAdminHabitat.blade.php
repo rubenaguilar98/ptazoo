@@ -104,14 +104,6 @@
                             <textarea class="form-control" id="descripcion" rows="3" name="descripcion" required>{{ $habitats->descripcion }}</textarea>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label for="imagen">Imagen</label>
-                            <input type="file" accept=".jpg,.png" id="imagen" name="imagen">
-                            <label style="font-weight : bold; margin-right : 1vh;">Archivo actual : </label><input type="text" value="{{ $habitats->img }}" name="imagenAnterior" readonly>
-                        </div>
-                    </div>
                     <div class="row" style="margin-top : 2vh;">
                         <div class="col-md-6">
                             <button type="submit" class="btn btn-primary">Aceptar</button>

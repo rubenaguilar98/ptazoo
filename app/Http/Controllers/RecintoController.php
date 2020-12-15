@@ -100,7 +100,6 @@ class RecintoController extends Controller
             'bebederos' => 'required',
             'vallado' => 'required',
             'descripcion' => 'required',
-          
             'idHab' => 'required',
         ]);
             dd($request);

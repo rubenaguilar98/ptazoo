@@ -93,8 +93,6 @@ class AnimalController extends Controller
             'dieta' => 'required',
             'fech_nac' => 'required',
             'descripcion' => 'required',
-            'imagen' => 'required',
-            'imagenAnterior' => 'required',
             'idRec' => 'required',
         ]);
 
@@ -119,7 +117,7 @@ class AnimalController extends Controller
             }else{
                 $updateAnimal->imagen = $request->input("imagenAnterior");
             }*/
-            $updateAnimal->imagen = $request->input("imagen");
+            
             $updateAnimal->idRec = $request->input('idRec');
             $updateAnimal->save();
             
