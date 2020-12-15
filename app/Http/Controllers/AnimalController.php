@@ -66,8 +66,9 @@ class AnimalController extends Controller
                 $file = $request->file("imagen");
                 $nombrearchivo  = $file->getClientOriginalName();
                 $file->move(public_path("img/animales/"),$nombrearchivo);
+                $newAnimal->imagen =  $nombrearchivo;
             }
-            $newAnimal->imagen =  $nombrearchivo;
+            
             $newAnimal->idRec = $request->input('idRec');
             $newAnimal->save();
 
