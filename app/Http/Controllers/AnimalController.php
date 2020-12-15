@@ -62,13 +62,13 @@ class AnimalController extends Controller
             $newAnimal->dieta = $request->input('dieta');
             $newAnimal->fech_nac = $request->input('fech_nac');
             $newAnimal->descripcion = $request->input('descripcion');
+            
             if ($request->hasFile('imagen')){
                 $file = $request->file("imagen");
                 $nombrearchivo  = $file->getClientOriginalName();
                 $file->move(public_path("img/animales/"),$nombrearchivo);
-                $newAnimal->imagen =  $nombrearchivo;
             }
-            
+            $newAnimal->imagen = $request->input('imagen');
             $newAnimal->idRec = $request->input('idRec');
             $newAnimal->save();
 
