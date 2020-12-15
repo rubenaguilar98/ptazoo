@@ -30,7 +30,7 @@ table {
                     <tr >
                         <th>Animal</th>
                     </tr>
-                    @foreach($recintos->sortBy('nombre') as $recinto)
+                    @foreach($recintos as $recinto)
                     <tr>
                         <td><a href="/showTipoAnimal/{{ $recinto->idRec }}">{{ $recinto->nombre }}</a></td>
                     </tr>
@@ -47,7 +47,7 @@ table {
                 </button>
             </h1>
 
-            <form id="form" action="{{ route('animal.add') }}" method="POST" style="display : none;">
+            <form id="form" action="{{ route('animal.add') }}" method="POST" style="display : none;" enctype="multipart/form-data">
             @csrf
                 <div class="row">
                     <div class="col">

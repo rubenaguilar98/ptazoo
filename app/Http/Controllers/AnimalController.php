@@ -70,6 +70,7 @@ class AnimalController extends Controller
                 $file = $request->file("imagen");
                 $nombrearchivo  = $file->getClientOriginalName();
                 $file->move(public_path("img/animales/"),$nombrearchivo);
+                
             }
             $newAnimal->imagen =  $nombrearchivo;
             $newAnimal->idRec = $request->input('idRec');
@@ -92,8 +93,8 @@ class AnimalController extends Controller
             'dieta' => 'required',
             'fech_nac' => 'required',
             'descripcion' => 'required',
-            //'imagen' => 'required',
-            //'imagenAnterior' => 'required',
+            'imagen' => 'required',
+            'imagenAnterior' => 'required',
             'idRec' => 'required',
         ]);
 
@@ -118,7 +119,7 @@ class AnimalController extends Controller
             }else{
                 $updateAnimal->imagen = $request->input("imagenAnterior");
             }*/
-            //$updateAnimal->imagen = $request->input("imagen");
+            $updateAnimal->imagen = $request->input("imagen");
             $updateAnimal->idRec = $request->input('idRec');
             $updateAnimal->save();
             
