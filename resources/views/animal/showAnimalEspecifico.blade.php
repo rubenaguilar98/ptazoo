@@ -79,7 +79,7 @@
     </div>
     <div class="row col-md-12">
         
-        <form id="form" class="col-md-12" action="{{ route('animal.update',['idAni' => $animal->idAni]) }}" method="POST" style="margin : 3vh; display : none;">
+        <form id="form" class="col-md-12" action="{{ route('animal.update',['idAni' => $animal->idAni]) }}" method="POST" style="margin : 3vh; display : none;" enctype="multipart/form-data">
             @csrf
             <div class="row">
                     <div class="col">

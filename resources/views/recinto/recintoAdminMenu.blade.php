@@ -46,7 +46,7 @@ table {
                     </svg>
                 </button></h1>
 
-            <form id="form" action="{{ route('recinto.add') }}" method="POST" style="display : none;">
+            <form id="form" action="{{ route('recinto.add') }}" method="POST" style="display : none;" enctype="multipart/form-data">
             @csrf
                 <div class="row">
                     <div class="col">
