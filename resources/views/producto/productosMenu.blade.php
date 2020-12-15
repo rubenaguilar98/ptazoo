@@ -25,7 +25,7 @@
                     <div class="card" style="width: 20rem; margin : 2vh;">
                         <div class="card-body">
                             <h5 class="card-title">{{ $producto->nombre }}</h5>
-                            <p><strong>{{ $producto->precio }}</strong></p>                        
+                            <p><strong>{{ $producto->precio }} €</strong></p>                        
                         </div>
                         <form action="{{route('cart.add')}}" method="post" style="margin : 3vh;">
                             @csrf

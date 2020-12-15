@@ -15,10 +15,10 @@
     <div>
             <div class="row col-md-12 justify-content-center">
                 <div class="card" style="width: 20rem; margin : 2vh;">
-                    <div class="card-body">
+                <div class="card-body" style="text-align : center;">
                         <h5 class="card-title">{{ $producto->nombre }}</h5>
                         <p class="card-text">{{ $producto->descripcion }}</p>
-                        <p><strong>{{ $producto->precio }}</strong></p>
+                        <p style="text-align : center;"><strong >{{ $producto->precio }} €</strong></p>
                         
                     </div>
                 </div>

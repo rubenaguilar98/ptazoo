@@ -74,7 +74,12 @@ class RecintoController extends Controller
             $newRecinto->bebederos = $request->input('bebederos');
             $newRecinto->vallado = $request->input('vallado');
             $newRecinto->descripcion = $request->input('descripcion');
-            $newRecinto->img = $request->input('img');
+            if ($request->hasFile('img')){
+                $file = $request->file("img");
+                $nombrearchivo  = $file->getClientOriginalName();
+                $file->move(public_path("img/recintos/"),$nombrearchivo);
+            }
+            $newRecinto->img =  $nombrearchivo;
             $newRecinto->idHab = $request->input('idHab');
             $newRecinto->save();
          

@@ -59,7 +59,12 @@ class HabitatController extends Controller
             $newHabitat->temperatura = $request->input('temperatura');
             $newHabitat->vegetacion = $request->input('vegetacion');
             $newHabitat->descripcion = $request->input('descripcion');
-            $newHabitat->img = $request->input('imagen');
+            if ($request->hasFile('imagen')){
+                $file = $request->file("imagen");
+                $nombrearchivo  = $file->getClientOriginalName();
+                $file->move(public_path("img/habitat/"),$nombrearchivo);
+            }
+            $newRecinto->img =  $nombrearchivo;
             $newHabitat->save();
             
 
