@@ -74,12 +74,14 @@ class RecintoController extends Controller
             $newRecinto->bebederos = $request->input('bebederos');
             $newRecinto->vallado = $request->input('vallado');
             $newRecinto->descripcion = $request->input('descripcion');
+
             if ($request->hasFile('img')){
                 $file = $request->file("img");
                 $nombrearchivo  = $file->getClientOriginalName();
-                $file->move(public_path("img/recintos/"),$nombrearchivo);
+                $file->move(public_path("img/recintos/"),$nombrearchivo); 
+                $newRecinto->img = $nombrearchivo;
             }
-            $newRecinto->img =  $nombrearchivo;
+            
             $newRecinto->idHab = $request->input('idHab');
             $newRecinto->save();
          
@@ -98,9 +100,10 @@ class RecintoController extends Controller
             'bebederos' => 'required',
             'vallado' => 'required',
             'descripcion' => 'required',
+          
             'idHab' => 'required',
         ]);
-        
+            dd($request);
             $updateRecinto = Recinto::find($request->input('idRec'));
             $id = $request->input('idRec');
             $updateRecinto->nombre = $request->input('nombre');
@@ -111,6 +114,17 @@ class RecintoController extends Controller
             $updateRecinto->bebederos = $request->input('bebederos');
             $updateRecinto->vallado = $request->input('vallado');
             $updateRecinto->descripcion = $request->input('descripcion');
+            
+            if($request->input('img')){
+                if ($request->hasFile('img')){
+                    $file = $request->file("img");
+                    $nombrearchivo  = $file->getClientOriginalName();
+                    $file->move(public_path("img/recintos/"),$nombrearchivo);
+                    $updateRecinto->img = $nombrearchivo;
+                }
+            }else{
+                $updateRecinto->img = $request->input('imagenAnterior');
+            }
             $updateRecinto->idHab = $request->input('idHab');
             $updateRecinto->save();
             
