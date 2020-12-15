@@ -73,7 +73,7 @@
     </div>
     <div class="row col-md-12">
         
-        <form id="form" class="col-md-12" action="{{ route('habitat.update',['idHab' => $habitats->idHab]) }}" method="POST" style="margin : 3vh; display : none;">
+        <form id="form" class="col-md-12" action="{{ route('habitat.update',['idHab' => $habitats->idHab]) }}" method="POST" style="margin : 3vh; display : none;" enctype="multipart/form-data">
             @csrf
                     <div class="row">
                         <div class="col">
@@ -106,9 +106,10 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label for="imagen">Imagen</label>
-                            <input type="file" accept=".jpg,.png" id="imagen" name="imagen" required>
+                            <input type="file" accept=".jpg,.png" id="imagen" name="imagen">
+                            <label style="font-weight : bold; margin-right : 1vh;">Archivo actual : </label><input type="text" value="{{ $habitats->img }}" name="imagenAnterior" readonly>
                         </div>
                     </div>
                     <div class="row" style="margin-top : 2vh;">

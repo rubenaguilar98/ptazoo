@@ -63,8 +63,9 @@ class HabitatController extends Controller
                 $file = $request->file("imagen");
                 $nombrearchivo  = $file->getClientOriginalName();
                 $file->move(public_path("img/habitat/"),$nombrearchivo);
+                
             }
-            $newRecinto->img =  $nombrearchivo;
+            $newHabitat->img =  $nombrearchivo;
             $newHabitat->save();
             
 
@@ -79,6 +80,8 @@ class HabitatController extends Controller
            'temperatura' => 'required',
            'vegetacion' => 'required',
            'descripcion' => 'required',
+           'imagen' => 'nullable',
+           'imagenAnterior' => 'required',
         ]);
 
             $updateHabitat = Habitat::find($request->input('idHab'));
@@ -88,6 +91,18 @@ class HabitatController extends Controller
             $updateHabitat->temperatura = $request->input('temperatura');
             $updateHabitat->vegetacion = $request->input('vegetacion');
             $updateHabitat->descripcion = $request->input('descripcion');
+            
+            if($request->input('imagen')){
+                if ($request->hasFile('imagen')){
+                    $file = $request->file("imagen");
+                    $nombrearchivo  = $file->getClientOriginalName();
+                    $file->move(public_path("img/habitat/"),$nombrearchivo);
+                    $updateHabitat->img = $request->input('imagen');
+                }
+               
+            }else{
+                $updateHabitat->img = $request->input('imagenAnterior');
+            }
             $updateHabitat->save();
             
 
