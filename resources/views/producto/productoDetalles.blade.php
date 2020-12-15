@@ -19,7 +19,7 @@
                         <h5 class="card-title">{{ $producto->nombre }}</h5>
                         <p class="card-text">{{ $producto->descripcion }}</p>
                         <p><strong>{{ $producto->precio }}</strong></p>
-                        <a href="/productoCarrito/{{ $producto->id }}" class="btn btn-primary">Añadir al carrito</a>
+                        
                     </div>
                 </div>
             </div>
