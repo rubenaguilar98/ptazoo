@@ -136,6 +136,12 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-8">
+                        <label>Imagen</label>
+                        <input type="file" name="imagen">
+                    </div>
+                </div>
                 <div class="row" style="margin-bottom : 3vh;">
                     <div class="col-md-3">
                         <label for="idRec">Recinto</label>

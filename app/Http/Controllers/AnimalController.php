@@ -38,6 +38,7 @@ class AnimalController extends Controller
     }
 
     public static function addAnimal(Request $request){
+       
         $request->validate([
            'nombre' => 'required|unique:habitat',
            'peso' => 'required',
@@ -51,6 +52,8 @@ class AnimalController extends Controller
            'imagen' => 'required',
            'idRec' => 'required',
         ]);
+
+
 
             $newAnimal = new Animal;
             $newAnimal->nombre = $request->input('nombre');
@@ -68,7 +71,7 @@ class AnimalController extends Controller
                 $nombrearchivo  = $file->getClientOriginalName();
                 $file->move(public_path("img/animales/"),$nombrearchivo);
             }
-            $newAnimal->imagen = $request->input('imagen');
+            $newAnimal->imagen =  $nombrearchivo;
             $newAnimal->idRec = $request->input('idRec');
             $newAnimal->save();
 
@@ -89,6 +92,8 @@ class AnimalController extends Controller
             'dieta' => 'required',
             'fech_nac' => 'required',
             'descripcion' => 'required',
+            //'imagen' => 'required',
+            //'imagenAnterior' => 'required',
             'idRec' => 'required',
         ]);
 
@@ -103,6 +108,17 @@ class AnimalController extends Controller
             $updateAnimal->dieta = $request->input('dieta');
             $updateAnimal->fech_nac = $request->input('fech_nac');
             $updateAnimal->descripcion = $request->input('descripcion');
+            /*if($request->input('imagen')){
+                if ($request->hasFile('imagen')){
+                    $file = $request->file("imagen");
+                    $nombrearchivo  = $file->getClientOriginalName();
+                    $file->move(public_path("img/animales/"),$nombrearchivo);
+                    
+                }
+            }else{
+                $updateAnimal->imagen = $request->input("imagenAnterior");
+            }*/
+            //$updateAnimal->imagen = $request->input("imagen");
             $updateAnimal->idRec = $request->input('idRec');
             $updateAnimal->save();
             
