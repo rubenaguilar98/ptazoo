@@ -16,7 +16,7 @@
         <div style="text-align : left; margin : 5vh;">
                 <h1 id="titulo" style="text-align : center">{{ $animal->nombre }}</h1>
                 <div class="row col-md-12" style="margin : 2vh;">
-                    <img class="col-md-6" src="../img/recintos/{{ $animal->imagen }}" class="" style="display : left; margin : auto;width : 80rem; height : 20rem;"/>
+                    <img class="col-md-6" src="../img/animales/{{ $animal->imagen }}" class="" style="display : left; margin : auto;width : 80rem; height : 20rem;"/>
                     <div class="col-md-6" style="background-color : white;"><h4 style="margin : 1vh;">{{ $animal->descripcion }}</h4></div>
                 </div>
                 <div>
