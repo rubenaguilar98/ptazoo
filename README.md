@@ -2,6 +2,11 @@
 
 PTA ZOO
 
+## Login
+
+Usuario administrador : Admin@prueba.es
+Contraseña : 12345678
+
 ## Script BDD
 -- phpMyAdmin SQL Dump
 -- version 5.0.1
